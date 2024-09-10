@@ -5,6 +5,7 @@ def show_main(request):
     context = {
         'npm' : '2306152153',
         'nama': 'Priscilla Natanael Surjanto',
+        'kelas': 'PBP F',
         'product1': 'Air Mineral',
         'harga1': 'Rp. 5000',
         'desc1': 'Air mineral yang sangat sehat dan menyegarkan',
