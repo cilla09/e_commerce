@@ -33,7 +33,8 @@ Kemudian untuk mendeploy ke PWS, pertama saya menentukan project name berupa 'ci
 
 
 **Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.**
-
+![WhatsApp Image 2024-09-11 at 08 21 35](https://github.com/user-attachments/assets/ddcb0513-e045-4c24-a4dd-3a3d29bd5a95)
+Pertama, Client akan mengirim request melalui Browser/Internet yang kemudian diproses oleh urls.py, yaitu URL dari client akan dicocokan dengan URL routing untuk menentukan views.py yang sesuai. Setelah menentukan view mana yang digunakan, kode dalam views.py tersebut akan dijalankan. Jika ada data yang diperlukan maka view akan mengumpulkan data dari models.py. Setelah data berhasil terkumpul, views.py akan menyiapkan respon dari template berkas html dan dirender dengan data yang sudah diperoleh. Lalu, hasil berupa website atau respon JSON akan dikembalikan ke Browser Client.
 
 **Jelaskan fungsi git dalam pengembangan perangkat lunak!**
 
