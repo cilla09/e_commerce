@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 # Create your models here.
@@ -7,4 +8,3 @@ class Product(models.Model):
     price = models.IntegerField()
     stock = models.IntegerField(default=0)
     category = models.CharField(max_length=255, default='Uncategorized')
-
