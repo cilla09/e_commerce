@@ -1,8 +1,9 @@
 [Cilla's Minimart](http://priscilla-natanael-cillasminimart.pbp.cs.ui.ac.id/)
 
 
+## Tugas 1
 
-**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+**Checklist Step by Step**
 1. Membuat projek Django
 
 Pertama, saya membuat direktori lokal pada komputer saya. Melalui Command Prompt, saya masuk virtual environment pada direktori tersebut, dan juga membuat file berupa requirements.txt yang berisi hal-hal yang akan diinstall berikutnya. Setelah menginstall requirements, saya menjalani command untuk membuat project Django. Untuk mengecek apakah project berhasil dibuat, saya menjalani command runserver dan pergi ke localhost:8000
@@ -48,3 +49,24 @@ Untuk menjadi permulaan pembelajaran pengembangan perangkat lunak, suatu framewo
 
 Model pada Django disebut sebagai ORM atau Object-Relational Mapping karena model di Django menghubungkan kode Python dengan tabel dan data dalam database relasional. Ketika membuat model di Django, pengembang hanya perlu menulis kode Python tanpa perlu menulis kueri SQL secara manual. Hal ini hasil dari ORM yang menerjemahkan objek Python menjadi kueri SQL yang sesuai. Dalam Django, setiap pengembang melakukan perubahan pada model, pengembang dapat melakukan migrasi untuk memperbarui database. Ini dapat dilakukan karena ORM di Django menghasilkan perintah migrasi yang mengubah tabel produk di database tanpa perlu pengembang menulis perintah SQL secara manual.
 
+## Tugas 2
+**Checklist Step by Step**
+1. Membuat input form untuk menambahkan objek model pada app sebelumnya.
+
+
+   
+2. Tambahkan 4 fungsi views baru untuk melihat objek yang sudah ditambahkan dalam format XML, JSON, XML by ID, dan JSON by ID.
+
+   
+3. Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+
+**Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?**
+
+
+**Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?**
+
+
+**Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?**
+
+
+**Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?**
