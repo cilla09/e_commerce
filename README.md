@@ -53,12 +53,24 @@ Model pada Django disebut sebagai ORM atau Object-Relational Mapping karena mode
 **Checklist Step by Step**
 1. Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
+Pertama, saya membuat file baru bernama forms.py di direktori aplikasi main. Pada file tersebut, saya mengimport form berupa ModelForm dari django.forms beserta model Product dari models.py di main. Lalu, saya menambah class ProductForm berisi model yang akan digunakan (Product) dan fields dari form, yaitu name, price, description, stock, dan category.
+
+Pada file views.py, saya menambahkan fungsi baru bernama create_product dengan parameter request. Isinya berupa pemanggilan form ProductForm, validasi input, dan menyimpan data input. Lalu, saya juga import redirect dari django.shortcuts untuk diimplementasikan sebagai berikut: setelah pengguna berhasil mengisi form, pengguna akan dikembalikan ke home. Lalu, pada fungsi show_main saya menambahkan line untuk mengambil seluruh objek Product yang tersimpan di database. Agar fungsi create_product dapat diakses, saya merouting fungsi tersebut dengan cara mengimport ke urls.py dalam direktori main. Saya juga menambahkan path ke fungsi tersebut pada list urlpatterns dalamnya.
+
+Terakhir, saya membuat template untuk pengisian input tersebut, yaitu create_product.html. Di dalamnya berisi form method (POST), csrf_token yang digenerate secara otomatis oleh Django untuk mencegah serangan berbahaya, template variable {{ form.as_table }} untuk menampilkan fields dari forms.py sebagai table. Terakhir, ada juga tombol submit untuk mengirim request ke view create_product(request). Pada template utama main.html, saya juga menambahkan kode untuk menampilkan data yang baru diinput beserta tombol untuk add new product.
 
    
 2. Tambahkan 4 fungsi views baru untuk melihat objek yang sudah ditambahkan dalam format XML, JSON, XML by ID, dan JSON by ID.
 
+Pada views.py, saya menambah import HttpResponse dari django.http dan serializers dari django.core. Serializer akan berfungsi untuk menserialisasi parameter data hasil query menjadi XML ataupun JSON. HttpResponse adalah bentuk yang akan direturn oleh fungsi.
+
+Untuk melihat objek yang sudah ditambahkan dalam format XML dan JSON, saya membuat fungsi baru bernama show_xml dan show_json, keduanya memiliki parameter sama yaitu request. Lalu, data pada fungsi tersebut menggunakan Product.objects.all(), yaitu semua objek Product pada database. Masing-masing fungsi akan mereturn HttpResponse berisi parameter data sudah diserialisasi menjadi XML/JSON dan parameter content_type aplikasi XML/JSON.
+
+Untuk melihat objek yang sudah ditambahkan dalam format XML dan JSON menggunakan ID, saya membuat fungsi baru bernama show_xml_by_id dan show_json_by_id, keduanya memiliki parameter sama yaitu request. Isi dari fungsi tersebut akan sama dengan fungsi yang sebelumnya dibuat, kecuali data akan difilter hanya data sesuai ID yang digunakan.
    
 3. Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+
+Masing-masing views yang sudah dibuat akan diimport pada urls.py. Lalu, saya menambahkan path ke masing-masing view pada list urlpatterns dalam file yang sama.
 
 **Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?**
 
