@@ -87,3 +87,17 @@ Fungsi is_valid() pada form Django berguna untuk memvalidasi input dari pengguna
 **Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?**
 
 Kita membutuhkan csrf_token saat membuat form di Django karena csrf_token berfungsi sebagai token untuk melindungi aplikasi dari serangan berbahaya CSRF (Cross Site Request Forgery). JIka kita tidak menambahkan csrf_token pada form Django, keamanan aplikasi menjadi rentan terhadap serangan tersebut. Esensinya, csrf_token bekerja dengan cara memastikan suatu permintaan benar-benar berasal dari halaman resmi/aplikasi itu sendiri, bukan dari sumber eksternal yang tidak sah. Apabila permintaan berasal dari sumber tidak sah, csrf_token akan menolak permintaan tersebut. Penyerang dapat memanfaatkan ketiadaan CSRF ini dengan cara membuat suatu link atau form di website lain lalu mengelabui pengguna untuk mengkliknya. Ketika pengguna sudah masuk ke aplikasi target, server target bisa mengolah permintaan tersebut seolah-olah itu adalah yang sah. Karena tidak ada csrf_token, server tidak bisa membedakan permintaan itu sah atau tidak.
+
+**POSTMAN Screenshots**
+
+- XML
+![2024-09-18](https://github.com/user-attachments/assets/2c1c35ff-4560-44c7-ad62-6b080331bf5d)
+
+- XML by ID
+![2024-09-18 (4)](https://github.com/user-attachments/assets/f0956226-5ccb-4bbc-a86d-946b21b67e03)
+
+- JSON
+![2024-09-18 (1)](https://github.com/user-attachments/assets/30f78e87-707f-4aaf-8b68-ea40bb1047db)
+
+- JSON by ID
+![2024-09-18 (3)](https://github.com/user-attachments/assets/719e39e9-f3cf-403f-b63b-be4c079dd892)
