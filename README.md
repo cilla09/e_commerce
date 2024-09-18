@@ -74,6 +74,7 @@ Masing-masing views yang sudah dibuat akan diimport pada urls.py. Lalu, saya men
 
 **Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?**
 
+Suatu platform berfungsi sebagai penghubung antara komponen-komponen yang ada di dalamnya. Data delivery diperlukan supaya data dari satu komponen/aplikasi dapat diteruskan ke komponen yang lain, sehingga suatu platform dapat bekerja dengan baik. Proses otentikasi, pengambilan data, dan penyimpanan data sangat memerlukan data delivery agar para komponen dalam platform dapat berkomunikasi secara real-time dan mendapat informasi tepat waktu.
 
 **Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?**
 
