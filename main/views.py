@@ -11,15 +11,6 @@ def show_main(request):
         'npm' : '2306152153',
         'nama': 'Priscilla Natanael Surjanto',
         'kelas': 'PBP F',
-        'product1': 'Air Mineral',
-        'harga1': 'Rp. 5000',
-        'desc1': 'Air mineral yang sangat sehat dan menyegarkan',
-        'product2': 'Teh Botol',
-        'harga2': 'Rp. 8000',
-        'desc2': 'Teh dari daun teh pilihan',
-        'product3': 'Kopi Bubuk',
-        'harga3': 'Rp. 10000',
-        'desc3': 'Kopi bubuk dari biji kopi pilihan',
         'products': products
     }
 

@@ -7,21 +7,6 @@
 <h5>Kelas: {{ kelas }}</h5>
 
 <h2>Daftar Produk</h2>
-<h3>{{ product1 }}</h3>
-<p>{{ desc1 }}<p>
-<p>{{ harga1 }}<p>
-<br>
-
-<h3>{{ product2 }}</h3>
-<p>{{ desc2 }}<p>
-<p>{{ harga2 }}<p>
-<br>
-
-<h3>{{ product3 }}</h3>
-<p>{{ desc3 }}<p>
-<p>{{ harga3 }}<p>
-<br>
-
 {% if not products %}
 <p>Belum ada data product baru pada Cilla's Minimart.</p>
 {% else %}
@@ -29,8 +14,8 @@
     {% endcomment %} 
     {% for product in products %}
         <h3>{{ product.name }}</h3>
-        <p>Rp. {{ product.price }}</p>
         <p>{{ product.description }}</p>
+        <p>Rp. {{ product.price }}</p>
         <p>Stok: {{ product.stock }}</p>
         <p>Kategori: {{ product.category }}</p>
         <br>
