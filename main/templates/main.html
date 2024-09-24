@@ -2,9 +2,8 @@
 {% block content %}
 <h1>Cilla's Minimart</h1>
 
-<h5>Nama: {{ nama }}</h5>
-<h5>NPM: {{ npm }}</h5>
-<h5>Kelas: {{ kelas }}</h5>
+<h5>Made by: {{ nama }} - {{ npm }} - {{ kelas }}</h5>
+<h3>Hi, {{ username }}!</h3>
 
 <h2>Daftar Produk</h2>
 {% if not products %}
@@ -27,4 +26,8 @@
 <a href="{% url 'main:create_product' %}">
     <button>Add New Product</button>
 </a>
+<a href="{% url 'main:logout' %}">
+    <button>Logout</button>
+  </a>
+<h5>Sesi terakhir login: {{ last_login }}</h5>
 {% endblock content %}
