@@ -1,7 +1,7 @@
 [Cilla's Minimart](http://priscilla-natanael-cillasminimart.pbp.cs.ui.ac.id/)
 
 
-## Tugas 1
+## Tugas 2
 
 **Checklist Step by Step**
 1. Membuat projek Django
@@ -49,7 +49,7 @@ Untuk menjadi permulaan pembelajaran pengembangan perangkat lunak, suatu framewo
 
 Model pada Django disebut sebagai ORM atau Object-Relational Mapping karena model di Django menghubungkan kode Python dengan tabel dan data dalam database relasional. Ketika membuat model di Django, pengembang hanya perlu menulis kode Python tanpa perlu menulis kueri SQL secara manual. Hal ini hasil dari ORM yang menerjemahkan objek Python menjadi kueri SQL yang sesuai. Dalam Django, setiap pengembang melakukan perubahan pada model, pengembang dapat melakukan migrasi untuk memperbarui database. Ini dapat dilakukan karena ORM di Django menghasilkan perintah migrasi yang mengubah tabel produk di database tanpa perlu pengembang menulis perintah SQL secara manual.
 
-## Tugas 2
+## Tugas 3
 **Checklist Step by Step**
 1. Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
@@ -101,3 +101,29 @@ Kita membutuhkan csrf_token saat membuat form di Django karena csrf_token berfun
 
 - JSON by ID
 ![2024-09-18 (3)](https://github.com/user-attachments/assets/719e39e9-f3cf-403f-b63b-be4c079dd892)
+
+## Tugas 4
+**Checklist Step by Step**
+1. Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+
+   
+2. Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+
+   
+3. Menghubungkan model Product dengan User.
+
+   
+4. Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+
+
+**Apa perbedaan antara HttpResponseRedirect() dan redirect()**
+
+
+**Jelaskan cara kerja penghubungan model Product dengan User!**
+
+
+**Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.**
+
+
+**Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?**
+
