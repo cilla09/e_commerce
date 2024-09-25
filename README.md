@@ -118,12 +118,20 @@ Kita membutuhkan csrf_token saat membuat form di Django karena csrf_token berfun
 
 **Apa perbedaan antara HttpResponseRedirect() dan redirect()**
 
+Walau keduanya memiliki fungsi yang sama untuk melakukan pengalihan (redirect) ke URL lain, terdapat perbedaan yang dasar di antaranya keduanya. HttpResponseRedirect membutuhkan URL sebagai parameter untuk mengarahkan pengguna, hal ini bisa dilakukan dengan membuat URL secara manual atau menggunakan method reverse(). Sementara, redirect() bisa menerima lebih banyak variasi parameter, yaitu URL, nama view, dan objek model. Sebenarnya, redirect() secara internal juga menggunakan HttpResponseRedirect(). Maka jika dibandingkan, redirect() lebih fleksibel dan mudah digunakan dibanding HttpResponseRedirect() karena kita tidak perlu diharuskan membuat URL untuk digunakan sebagai parameter.
 
 **Jelaskan cara kerja penghubungan model Product dengan User!**
 
 
 **Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.**
 
+Autentikasi merupakan proses pengecekan identitas pengguna, apakah sudah sesuai semua kredensial dan data dirinya. Autentikasi mengatur tentang siapa pengguna itu. Otorisasi merupakan proses pengecekan setelah memastikan identitas pengguna, apa saja hak yang dimiliki pengguna tersebut. Otorisasi mengatur tentang apa yang bisa dilakukan oleh pengguna tersebut. 
+
+Saat pengguna login, pertama kredensial yang diinput oleh pengguna akan melalui proses autentikasi untuk dicocokan dengan data user pada database. Jika ada yang cocok, maka kredensial tersebut valid dan sistem akan menandai pengguna sebagai “terautentikasi” dengan menyimpan sesi atau token yang terkait dengan pengguna. Setelah proses autentikasi selesai, baru proses otorisasi akan dijalankan untuk menentukan apa saja hak yang dimiliki pengguna dalam aplikasi terkait.
+
+Dalam hal autentikasi, pertama Django menyimpan data pengguna seperti username, password, dan email dalam model User. Django sendiri mempunyai fungsi untuk menangani proses login, yaitu authenticate(request, username, password) untuk memverifikasi kredensial pengguna, login(request, user) untuk menyimpan sesi/token sebagai tanda pengguna “terautentikasi”, dan logout(request) untuk menghapus sesi dan penanda pengguna keluar dari sistem. Setelah pengguna mengisi formulir, formulir itu akan mengirim kredensial ke view Django, di mana autentikasi akan berjalan dan semua fungsi di atas dapat digunakan.
+
+Dalam hal otorisasi, Django menggunakan perizinan (permission) dan grup (groups). Melalui dua hal ini, dapat ditentukan pengguna dapat mengakses bagian aplikasi mana atau melakukan tindakan tertentu pada aplikasi. Grup mengelompokkan hak untuk pengguna, sehingga mempermudah penentuan hak pengguna sesuai dengan kelompoknya. Selain itu, Django juga memiliki decorator @permission_required dan middleware untuk mengecek izin akses pengguna. 
 
 **Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?**
 
