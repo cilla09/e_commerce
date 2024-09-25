@@ -135,3 +135,8 @@ Dalam hal otorisasi, Django menggunakan perizinan (permission) dan grup (groups)
 
 **Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?**
 
+Django mengingat pengguna yang telah login menggunakan cookies dan session framework. Ketika pengguna login, Django akan menyimpan session ID dalam cookies browser. Di lain waktu saat pengguna login lagi menghasilkan adanya permintaan, cookie ini akan dikirim kembali ke server sehingga server dapat mengidentifikasi pengguna yang sedang aktif. 
+
+Cookies memiliki banyak kegunaan selain menyimpan data last login pengguna, seperti menyimpan preferensj pengguna (misal tema browser dan bahasa), tracking dan analytics (untuk melacak aktivitas pengguna, lalu dianalisa untuk meningkatkan pengalaman pengguna), iklan dan personalisasi konten (melalui aktivitas penelusuran pengguna, hal-hal yang disukai pengguna dapat dianalisa sehingga iklan serta konten yang muncul akan sesuai kesukaan pengguna).
+
+Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi sebagai cookie “secure” atau “http-only”, bisa rentan terhadap serangan Man-in-the-middle atau Cross-Site Scripting. Cookies juga dapat berasal dari pihak ketiga, sehingga data pengguna dalam cookies itu memiliki bahaya diekploitasi oleh perusahaan iklan/pihak ketiga. Jika cookies menyimpan data pribadi yang sensitif (misal: data kartu kredit), informasi tersebut rentan dicuri penyerang jika tidak ada proteksi atau enkripsi yang tepat.
