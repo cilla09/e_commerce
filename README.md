@@ -106,15 +106,37 @@ Kita membutuhkan csrf_token saat membuat form di Django karena csrf_token berfun
 **Checklist Step by Step**
 1. Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
 
+Registrasi:
+- Dalam views.py, saya membuat fungsi register(request).
+- Dalam fungsi tersebut, saya membuat formulir registrasi dengan UserCreationForm() yang methodnya POST. Saya juga memvalidasi input pengguna menggunakan method is.valid(). Data dari pengguna disimpan dengan form.save(). Lalu, pengguna dialihkan ke halaman login dengan redirect('main:login')
+- Membuat register.html sebagai template halaman registrasi
+- Fungsi register pada views.py dirouting pada urls.py
+
+Login:
+- Dalam views.py, saya membuat fungsi login_user(request).
+- Dalam fungsi tersebut, saya membuat formulir login dengan UserCreationForm() yang methodnya POST. Saya juga memvalidasi input pengguna menggunakan method is.valid(). Data dari pengguna akan diautentikasi dengan form.get_user() kemudian sesi disimpan dengan login(request, user). Lalu, pengguna dialihkan ke halaman utama dengan redirect('main:show_main')
+- Membuat login.html sebagai template halaman login
+- Fungsi login_user pada views.py dirouting pada urls.py
+
+Logout:
+- Dalam views.py, saya membuat fungsi logout_user(request). 
+- Dalam fungsi tersebut, sesi pengguna dihapus dengan logout(user). Lalu, pengguna dialihkan ke halaman login dengan redirect('main:login')
+- Menambahkan button untuk memanggil fungsi logout pada main.html
+- Fungsi logout_user pada views.py dirouting pada urls.py
    
 2. Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
 
+Membuat dua akun pengguna dengan mengisi halaman form registrasi (signup/) 2 kali dengan data akun yang berbeda. Lalu, untuk masing-masing akun, saya menambah 3 dummy product melalui halaman Add New Product (create-product-entry/).
    
 3. Menghubungkan model Product dengan User.
 
+Untuk menghubungkan model Product dengan User, saya menggunakan ForeignKey. Hal ini saya lakukan dengan menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` dalam class Product di models.py
    
 4. Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
 
+Untuk menampilkan detail informasi pengguna yang sedang logged in, saya menambahkan `'name': request.user.username` ke context pada fungsi show_main di views.py. Lalu, saya masukkan `{{ name }}` di main.html untuk menampilkan username pengguna.
+
+Untuk menerapkan cookies, saya menambahkan `response.set_cookie('last_login', str(datetime.datetime.now()))` untuk membuat cookie last login dan menambahkannya ke dalam response. Lalu, saya juga menambahkan `'last_login': request.COOKIES['last_login']` ke context pada fungsi show_main di views.py. Hal ini berfungsi untuk menambahkan informasi cookie last_login pada response yang akan ditampilkan di halaman web. Saya juga menambahkan `response.delete_cookie('last_login')` yang menghapus cookie last_login saat pengguna melakukan logout. Terakhir, agar data waktu last_login pengguna tampil di halaman utama, saya menambahkan {{ last_login }} pada main.html
 
 **Apa perbedaan antara HttpResponseRedirect() dan redirect()**
 
@@ -122,6 +144,7 @@ Walau keduanya memiliki fungsi yang sama untuk melakukan pengalihan (redirect) k
 
 **Jelaskan cara kerja penghubungan model Product dengan User!**
 
+Di Django, menghubungkan model Product dengan User biasa menggunakan ForeignKey. ForeignKey dapat menunjukkan adanya hubungan antara produk dan pengguna. Beberapa kegunaan utama ForeignKey, yaitu relasi many-to-one yang memungkinkan hubungan antara satu pengguna dan banyak produk, integritas data, dan querying yang lebih mudah.
 
 **Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.**
 
