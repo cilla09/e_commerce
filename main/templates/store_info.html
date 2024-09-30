@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+<title>About Us</title>
+{% endblock meta %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<div class="overflow-x-hidden px-4 md:px-8 pb-8 pt-24 min-h-screen bg-gray-100 flex flex-col">
+    <div class="flex flex-col items-center justify-center p-6">
+        <img src="{% static 'image/store-logo.png' %}" alt="Logo" class="w-32 h-32 mb-2"/>
+        <p class="text-center text-2xl font-bold font-serif text-blue-500">Cilla's Minimart</p>
+        <p class="text-center text-blue-400">ฅ^•ﻌ•^ฅ</p>
+        <p class="text-center text-blue-400 mb-2">A cat-themed minimart that sells various goods.</p>
+    </div>
+  <div class="p-2 mb-6 relative">
+    <div class="relative grid grid-cols-1 z-30 md:grid-cols-3 gap-8">
+      {% include "card_info.html" with title='NPM' value=npm %}
+      {% include "card_info.html" with title='Store Owner' value=nama %}
+      {% include "card_info.html" with title='Class' value=kelas %}
+    </div>
+    <div class="w-full px-6  absolute top-[44px] left-0 z-20 hidden md:flex">
+      <div class="w-full min-h-4 bg-blue-400">
+      </div>
+    </div>
+    <div class="h-full w-full py-6  absolute top-0 left-0 z-20 md:hidden flex ">
+      <div class="h-full min-w-4 bg-blue-400 mx-auto">
+      </div>
+    </div>
+</div>
+{% endblock content %}
