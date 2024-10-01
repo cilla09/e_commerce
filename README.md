@@ -164,7 +164,7 @@ Cookies memiliki banyak kegunaan selain menyimpan data last login pengguna, sepe
 
 Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi sebagai cookie “secure” atau “http-only”, bisa rentan terhadap serangan Man-in-the-middle atau Cross-Site Scripting. Cookies juga dapat berasal dari pihak ketiga, sehingga data pengguna dalam cookies itu memiliki bahaya diekploitasi oleh perusahaan iklan/pihak ketiga. Jika cookies menyimpan data pribadi yang sensitif (misal: data kartu kredit), informasi tersebut rentan dicuri penyerang jika tidak ada proteksi atau enkripsi yang tepat.
 
-## Tugas 4
+## Tugas 5
 **Checklist Step by Step**
 
 **Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!**
