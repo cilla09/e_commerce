@@ -163,3 +163,38 @@ Django mengingat pengguna yang telah login menggunakan cookies dan session frame
 Cookies memiliki banyak kegunaan selain menyimpan data last login pengguna, seperti menyimpan preferensi pengguna (misal tema browser dan bahasa), tracking dan analytics (untuk melacak aktivitas pengguna, lalu dianalisa untuk meningkatkan pengalaman pengguna), iklan dan personalisasi konten (melalui aktivitas penelusuran pengguna, hal-hal yang disukai pengguna dapat dianalisa sehingga iklan serta konten yang muncul akan sesuai kesukaan pengguna).
 
 Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi sebagai cookie “secure” atau “http-only”, bisa rentan terhadap serangan Man-in-the-middle atau Cross-Site Scripting. Cookies juga dapat berasal dari pihak ketiga, sehingga data pengguna dalam cookies itu memiliki bahaya diekploitasi oleh perusahaan iklan/pihak ketiga. Jika cookies menyimpan data pribadi yang sensitif (misal: data kartu kredit), informasi tersebut rentan dicuri penyerang jika tidak ada proteksi atau enkripsi yang tepat.
+
+## Tugas 4
+**Checklist Step by Step**
+
+**Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!**
+
+Urutan prioritas pengambilan CSS selector adalah sebagai berikut.
+1. !important = sebuah pengecualian, jika ada ini maka semua aturan lain akan disampingkan, dan aturan ini menjadi prioritas tertinggi.
+2. Inline styles (style = …)= style yang diterapkan langsung di HTML melalui atribut style. Contoh: <p style="color: purple;">Ini inline style</p>
+3. ID selector (#id) = selector yang menunjuk elemen dengan ID tertentu menggunakan tanda pagar (#). Contoh: #main { color: green; }
+4. Classes selector (.class), pseudo-class (:hover, :focus, dll), dan atribut selector ([attr=“value”]). Contoh class selector: .header { color: blue; }. Contoh atribut selector: input[type="text"] { background-color: yellow; }.
+5. Element selector/tag selector, pseudo-element. Contoh element selector: h1, p, div. Contoh pseudo-element: ::before, ::after.
+
+Jika ada dua atau lebih CSS selector yang memiliki prioritas sama, aturan yang muncul terakhir akan diterapkan.
+
+**Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!**
+
+Responsive design adalah konsep yang penting dalam pengembangan aplikasi web agar web dapat diakses dan digunakan dengan nyaman melalui semua perangkat, yaitu mobile (hp dan tablet) serta desktop. Aksesibilitas suatu web sangat penting untuk pengalaman user, dan responsive design menjadi faktor utama aksesibilitas tersebut. Contoh aplikasi yang sudah menerapkan responsive design, yaitu Netflix, Youtube. Contoh aplikasi yang belum menerapkan responsive design, yaitu klikbca.com.
+
+**Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!**
+
+Margin merupakan ruang/space transparan di luar elemen. Untuk kustomisasi, margin dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
+// insert
+
+Border merupakan garis yang mengelilingi elemen. Untuk kustomisasi, border dapat diatur lebar, jenis, dan warna.
+//insert
+
+Padding merupakan ruang/space transparan di dalam elemen. Untuk kustomisasi, padding dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
+//insert
+
+**Jelaskan konsep flex box dan grid layout beserta kegunaannya!**
+
+Flex box merupakan sistem tata letak/layout 1D yang mengatur elemen pada satu baris/kolom. Flex box, sesuai namanya, dapat mengatur elemen secara fleksibel, yaitu otomatis menyesuaikan ukurannya sesuai rusng yang tersedia. Dengan flex box, mudah bagi pengembang untuk membuat layout yang responsif, misal sejajar secara horizontal atau vertikal.
+
+Grid layout merupakan sistem tata letak/layout 2D yang mengatur elemen pada suatu tabel (lebih dari satu baris dan kolom). Grid layout memungkinkan pengembang memiliki lebih banyak kontrol dalam pengaturan posisi elemen. Hal ini berkat posisi elemen yang diatur secara eksplisit, sehingga dapat lebih presisi sesuai keinginan pengembang.
