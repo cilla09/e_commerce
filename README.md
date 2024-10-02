@@ -172,6 +172,18 @@ Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi se
 2. Membuat edit_product.html sebagai template untuk halaman edit product.
 3. Menambahkan button untuk edit dan delete product pada main.html.
 
+* Kustomisasi desain pada template HTML
+1. Styling akan dibuat dengan Tailwind CSS, maka saya menambahkan Tailwind ke aplikasi melalui base.html
+2. Menggunakan tailwind, saya membuat styling untuk halaman login, register, add product, dan edit product semenarik mungkin.
+3. Membuat folder static/image yang akan diisi foto yang akan digunakan pada web.
+4. Agar static dapat digunakan, saya menambah konfigurasi STATIC_URL, STATICFILES_DIRS, dan STATIC_ROOT pada settings.py.
+5. Pada halaman yang akan menggunakan file dari static, saya menambah `{% load static %}` di atas kode.
+6. Untuk halaman daftar produk, saya membuat `card_product.html` sebagai template untuk setiap kartu produk yang akan ditampilkan pada halaman. Halaman daftar produk saya buat responsive menggunakan card product yang menerapkan flexbox. Lalu, untuk kondisi halaman ketika ada atau tidaknya produk saya menggunakan if-else.
+7. Untuk info toko (nama, kelas, dan NPM), saya membuat `store_info.html` yang berperan sebagai halaman About dan `card_info.html` sebagai kartu yang akan ditampilkan pada halaman tersebut.
+8. Membuat `profile_info.html` sebagai halaman Profil User yang berisi data last login dan nama user.
+9. Membuat dua button edit dan delete untuk setiap card dengan menambahkan button pada `card_product.html` yang dirouting ke fungsi `edit_product` dan `delete_product`.
+10. Membuat `navbar.html` sebagai template untuk navigation bar, lalu saya menambah `{% include 'navbar.html' %}` di dalam block content setiap halaman yang menggunakan navigation bar.
+11. Membuat navigation bar yang responsive dengan menggunakan pengaturan `md:flex` untuk desktop dan `md:hidden` untuk mobile.
 
 **Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!**
 
