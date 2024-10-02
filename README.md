@@ -171,10 +171,10 @@ Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi se
 
 Urutan prioritas pengambilan CSS selector adalah sebagai berikut.
 1. !important = sebuah pengecualian, jika ada ini maka semua aturan lain akan disampingkan, dan aturan ini menjadi prioritas tertinggi.
-2. Inline styles (style = …)= style yang diterapkan langsung di HTML melalui atribut style. Contoh: <p style="color: purple;">Ini inline style</p>
-3. ID selector (#id) = selector yang menunjuk elemen dengan ID tertentu menggunakan tanda pagar (#). Contoh: #main { color: green; }
-4. Classes selector (.class), pseudo-class (:hover, :focus, dll), dan atribut selector ([attr=“value”]). Contoh class selector: .header { color: blue; }. Contoh atribut selector: input[type="text"] { background-color: yellow; }.
-5. Element selector/tag selector, pseudo-element. Contoh element selector: h1, p, div. Contoh pseudo-element: ::before, ::after.
+2. Inline styles (`style = …`)= style yang diterapkan langsung di HTML melalui atribut style. Contoh: `<p style="color: purple;">Ini inline style</p>`
+3. ID selector (`#id`) = selector yang menunjuk elemen dengan ID tertentu menggunakan tanda pagar (`#`). Contoh: `#main { color: green; }`
+4. Classes selector (`.class`), pseudo-class (`:hover`, `:focus`, dll), dan atribut selector (`[attr=“value”]`). Contoh class selector: `.header { color: blue; }`. Contoh atribut selector: `input[type="text"] { background-color: yellow; }`.
+5. Element selector/tag selector, pseudo-element. Contoh element selector: `h1`, `p`, `div`. Contoh pseudo-element: `::before`, `::after`.
 
 Jika ada dua atau lebih CSS selector yang memiliki prioritas sama, aturan yang muncul terakhir akan diterapkan.
 
@@ -185,13 +185,69 @@ Responsive design adalah konsep yang penting dalam pengembangan aplikasi web aga
 **Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!**
 
 Margin merupakan ruang/space transparan yang mengelilingi border (di luar content, padding, dan border). Untuk kustomisasi, margin dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
-// insert
+``` html
+<div class="m-2 mt-2 mb-2 mr-2 ml-2">
+   <!-- m-n margin semua sisi sebesar n*0.25rem -->
+   <!-- mt-n margin top/sisi atas sebesar n*0.25rem -->
+   <!-- mb-n margin bottom/sisi bawah sebesar n*0.25rem -->
+   <!-- mr-n margin right/sisi kanan sebesar n*0.25rem -->
+   <!-- ml-n margin left/sisi kiri sebesar n*0.25rem -->
+ ...
+</div>
+   ```
 
 Border merupakan garis yang mengelilingi padding (di luar content dan padding). Untuk kustomisasi, border dapat diatur lebar, jenis, dan warna.
-//insert
+``` html
+<!-- Ketebalan border -->
+<div class="border-2 border-t-2 border-b-2 border-r-2 border-l-2">
+   <!-- border-n margin semua sisi sebesar n px -->
+   <!-- border-t-n margin top/sisi atas sebesar n px -->
+   <!-- border-b-n margin bottom/sisi bawah sebesar n px -->
+   <!-- border-r-n margin right/sisi kanan sebesar n px -->
+   <!-- border-l-n margin left/sisi kiri sebesar n px -->
+ ...
+</div>
+   ```
+``` html
+<!-- Warna border -->
+<div class="border border-red-500"></div> <!-- Border merah -->
+<div class="border-t border-t-blue-500"></div> <!-- Border atas biru -->
+   ```
+``` html
+<!-- Sudut border -->
+<div class="border border-2 rounded-lg"></div> <!-- Sudut dibulatkan sebesar large -->
+   ```
+Variasi ukuran radius border:
+- rounded (small default radius)
+- rounded-sm (small radius)
+- rounded-md (medium radius)
+- rounded-lg (large radius)
+- rounded-full (fully rounded, like a circle)
+- rounded-none (no rounding)
+
+``` html
+<!-- Jenis border -->
+<div class="border-2 border-dashed border-blue-500"></div> <!-- Border garis putus-putus -->
+   ```
+
+Jenis-jenis border:
+- border-solid (default solid border)
+- border-dashed
+- border-dotted
+- border-double
+- border-none
 
 Padding merupakan ruang/space transparan yang mengelilingi content di dalam border. Untuk kustomisasi, padding dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
-//insert
+``` html
+<div class="p-2 pt-2 pb-2 pr-2 pl-2">
+   <!-- p-n padding semua sisi sebesar n*0.25rem -->
+   <!-- pt-n padding top/sisi atas sebesar n*0.25rem -->
+   <!-- pb-n padding bottom/sisi bawah sebesar n*0.25rem -->
+   <!-- pr-n padding right/sisi kanan sebesar n*0.25rem -->
+   <!-- pl-n padding left/sisi kiri sebesar n*0.25rem -->
+ ...
+</div>
+   ```
 
 **Jelaskan konsep flex box dan grid layout beserta kegunaannya!**
 
