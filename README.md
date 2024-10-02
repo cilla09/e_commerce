@@ -167,6 +167,12 @@ Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi se
 ## Tugas 5
 **Checklist Step by Step**
 
+* Implementasikan fungsi untuk menghapus dan mengedit product.
+1. Menambah fungsi edit_product(request, id) dan delete_product(request, id) pada views.py. Lalu, merouting kedua fungsi tersebut dengan menambahkan import dan path di main/urls.py.
+2. Membuat edit_product.html sebagai template untuk halaman edit product.
+3. Menambahkan button untuk edit dan delete product pada main.html.
+
+
 **Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!**
 
 Urutan prioritas pengambilan CSS selector adalah sebagai berikut.
