@@ -184,13 +184,13 @@ Responsive design adalah konsep yang penting dalam pengembangan aplikasi web aga
 
 **Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!**
 
-Margin merupakan ruang/space transparan di luar elemen. Untuk kustomisasi, margin dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
+Margin merupakan ruang/space transparan yang mengelilingi border (di luar content, padding, dan border). Untuk kustomisasi, margin dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
 // insert
 
-Border merupakan garis yang mengelilingi elemen. Untuk kustomisasi, border dapat diatur lebar, jenis, dan warna.
+Border merupakan garis yang mengelilingi padding (di luar content dan padding). Untuk kustomisasi, border dapat diatur lebar, jenis, dan warna.
 //insert
 
-Padding merupakan ruang/space transparan di dalam elemen. Untuk kustomisasi, padding dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
+Padding merupakan ruang/space transparan yang mengelilingi content di dalam border. Untuk kustomisasi, padding dapat diatur ketebalannya per sisi, yaitu kiri, kanan, atas, dan bawah.
 //insert
 
 **Jelaskan konsep flex box dan grid layout beserta kegunaannya!**
