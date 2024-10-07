@@ -49,6 +49,7 @@
             </form>
           </div>
           <!-- Modal footer -->
+          <div id="error-message" class="text-red-500 text-center"></div>
           <div class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2 p-6 border-t border-gray-200 rounded-b justify-center md:justify-end">
             <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg" id="cancelButton">Cancel</button>
             <button type="submit" id="submitProduct" form="productForm" class="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Save</button>
@@ -58,21 +59,28 @@
 </div>
 <script>
     function addProduct() {
+        event.preventDefault();
+        document.getElementById("error-message").innerHTML = "";
         fetch("{% url 'main:add_product_ajax' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#productForm')),
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
         })
         .then(response => {
             if (response.ok) {
-                return refreshProducts();
+                document.getElementById("productForm").reset();
+                hideModal();
+                refreshProducts();
             } else {
-                throw new Error('Failed to add product');
+                document.getElementById("productForm").reset();
+                return response.text().then(text => {
+                    document.getElementById("error-message").innerHTML = '<p>Please fill out all fields correctly.</p>';
+                });
             }
         })
-
-        document.getElementById("productForm").reset(); 
         document.querySelector("[data-modal-toggle='crudModal']").click();
-
         return false;
     }
 
@@ -211,7 +219,6 @@ document.getElementById("closeModalBtn").addEventListener("click", hideModal);
 document.getElementById("productForm").addEventListener("submit", (e) => {
     e.preventDefault();
     addProduct();
-    hideModal();
   })
 </script>
 {% endblock content %}

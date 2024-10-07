@@ -58,6 +58,7 @@ def add_product_ajax(request):
     )
 
     if name == "" or description == "" or price == "" or stock == "" or category == "":
+        messages.error(request, "Please fill all the fields")
         return HttpResponse(b"BAD REQUEST", status=400)
     else:
         new_product.save()
