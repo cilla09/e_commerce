@@ -58,23 +58,11 @@
 </div>
 <script>
     function addProduct() {
-        
         fetch("{% url 'main:add_product_ajax' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#productForm')),
         })
         .then(response => {
-            const name = document.getElementById("name").value.trim();
-            const description = document.getElementById("description").value.trim();
-            const price = document.getElementById("price").value; 
-            const stock = document.getElementById("stock").value; 
-            const category = document.getElementById("category").value.trim();
-    
-            // Check if any of the required fields are blank
-            if (!name || !description || !category || price === '' || stock === '') {
-                alert('Please fill in all fields correctly.');
-                return; // Exit the function if validation fails
-            }
             if (response.ok) {
                 return refreshProducts();
             } else {
