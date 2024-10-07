@@ -276,6 +276,34 @@ Grid layout merupakan sistem tata letak/layout 2D yang mengatur elemen pada suat
 ## Tugas 6
 **Checklist Step by Step**
 
+- Ubahlah kode cards data mood agar dapat mendukung AJAX GET.
+
+
+
+- Lakukan pengambilan data mood menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
+
+
+  
+- Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.
+
+
+  
+- Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.
+
+
+  
+- Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+
+
+  
+- Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+
+
+
+- Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
+
+
+
 **Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!**
 
 1. Mempermudah pembuatan website yang interaktif. Menggunakan JavaScript, pengembang dapat membuat elemen interaktif pada situs web proyek mereka, misalnya tombol yang merespons klik, form untuk diisi pengguna, dan animasi yang responsif.
@@ -283,13 +311,16 @@ Grid layout merupakan sistem tata letak/layout 2D yang mengatur elemen pada suat
 3. Membuat web lebih responsif dan dinamis, yaitu JS dapat memperbarui konten halaman web tanpa harus memuat ulang seluruh halaman.
 4. Mempermudah pengguna membangun aplikasi dengan cepat karena JavaScript kompatibel dengan sebagian besar browser modern, serta memiliki ekosistem yang besar dengan framework seperti React, Angular, Vue.js, dan Node.js.
 
+
 **Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?**
 
 Await digunakan untuk menunggu hasil dari fetch() sebelum melanjutkan eksekusi kode, sehingga kode berikutnya dapat menggunakan data hasil tersebut. Jika kita tidak menggunakan await, kode setelah fetch() akan langsung dijalankan tanpa menunggu hasil dari fetch() itu sendiri. Akibatnya, hasil dari fetch() bisa tidak tersedia di saat kode selanjutnya diakses.
 
+
 **Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?**
 
 Kita perlu menggunakan decorator csrf_exempt karena bisa terdapat skenario permintaan AJAX POST di mana pengiriman token CSRF tidak diperlukan, misalnya endpoint yang berkomunikasi dengan aplikasi eksternal. Pada skenario itu, kita ingin menerima permintaan POST dari aplikasi lain yang tidak memiliki akses ke token CSRF kita. Supaya website tetap berjalan dengan lancar, maka kita perlu decorator csrf_exempt untuk menonaktifkan proteksi middleware CSRF. Jika kita tidak menggunakan csrf_exempt, maka Django dapat merespons dengan HTTP 403 Forbidden karena permintaan itu dianggap tidak aman. 
+
 
 **Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?**
 
