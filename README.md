@@ -272,3 +272,25 @@ Padding merupakan ruang/space transparan yang mengelilingi content di dalam bord
 Flex box merupakan sistem tata letak/layout 1D yang mengatur elemen pada satu baris/kolom. Flex box, sesuai namanya, dapat mengatur elemen secara fleksibel, yaitu otomatis menyesuaikan ukurannya sesuai rusng yang tersedia. Dengan flex box, mudah bagi pengembang untuk membuat layout yang responsif, misal sejajar secara horizontal atau vertikal.
 
 Grid layout merupakan sistem tata letak/layout 2D yang mengatur elemen pada suatu tabel (lebih dari satu baris dan kolom). Grid layout memungkinkan pengembang memiliki lebih banyak kontrol dalam pengaturan posisi elemen. Hal ini berkat posisi elemen yang diatur secara eksplisit, sehingga dapat lebih presisi sesuai keinginan pengembang.
+
+## Tugas 6
+**Checklist Step by Step**
+
+**Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!**
+
+1. Mempermudah pembuatan website yang interaktif. Menggunakan JavaScript, pengembang dapat membuat elemen interaktif pada situs web proyek mereka, misalnya tombol yang merespons klik, form untuk diisi pengguna, dan animasi yang responsif.
+2. Lebih efisien karena eksekusi di client-side, yaitu sebagian besar operasi JavaScript berjalan di peramban pengguna. Hal ini bermanfaat untuk mengurangi beban server dan mempercepat pemuatan halaman, karena kompleksitas kode JS tidak memengaruhi performa situs web, melainkan peramban pengguna.
+3. Membuat web lebih responsif dan dinamis, yaitu JS dapat memperbarui konten halaman web tanpa harus memuat ulang seluruh halaman.
+4. Mempermudah pengguna membangun aplikasi dengan cepat karena JavaScript kompatibel dengan sebagian besar browser modern, serta memiliki ekosistem yang besar dengan framework seperti React, Angular, Vue.js, dan Node.js.
+
+**Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?**
+
+Await digunakan untuk menunggu hasil dari fetch() sebelum melanjutkan eksekusi kode, sehingga kode berikutnya dapat menggunakan data hasil tersebut. Jika kita tidak menggunakan await, kode setelah fetch() akan langsung dijalankan tanpa menunggu hasil dari fetch() itu sendiri. Akibatnya, hasil dari fetch() bisa tidak tersedia di saat kode selanjutnya diakses.
+
+**Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?**
+
+Kita perlu menggunakan decorator csrf_exempt karena bisa terdapat skenario permintaan AJAX POST di mana pengiriman token CSRF tidak diperlukan, misalnya endpoint yang berkomunikasi dengan aplikasi eksternal. Pada skenario itu, kita ingin menerima permintaan POST dari aplikasi lain yang tidak memiliki akses ke token CSRF kita. Supaya website tetap berjalan dengan lancar, maka kita perlu decorator csrf_exempt untuk menonaktifkan proteksi middleware CSRF. Jika kita tidak menggunakan csrf_exempt, maka Django dapat merespons dengan HTTP 403 Forbidden karena permintaan itu dianggap tidak aman. 
+
+**Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?**
+
+Pembersihan data input pengguna perlu dilakukan di backend juga karena frontend saja belum cukup untuk menjamin keamanan web. Frontend lebih mudah dimanipulasi oleh pengguna, misal dengan memodifikasi kode JavaScript di browser dan menonaktifkan validasi. Dengan menambah validasi dan pembersihan data di backend juga, kita memastikan input tidak bisa dilewati atau dimodifikasi oleh pengguna. Secara singkat, frontend berperan sebagai lapisan perlindungan pertama, dan backend berperan sebagai lapisan pertahanan utama.
