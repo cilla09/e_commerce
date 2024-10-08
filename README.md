@@ -1,9 +1,10 @@
 [Cilla's Minimart](http://priscilla-natanael-cillasminimart.pbp.cs.ui.ac.id/)
 
-
-## Tugas 2
+<details>
+<summary>Tugas 2</summary>
 
 **Checklist Step by Step**
+
 1. Membuat projek Django
 
 Pertama, saya membuat direktori lokal pada komputer saya. Melalui Command Prompt, saya masuk virtual environment pada direktori tersebut, dan juga membuat file berupa requirements.txt yang berisi hal-hal yang akan diinstall berikutnya. Setelah menginstall requirements, saya menjalani command untuk membuat project Django. Untuk mengecek apakah project berhasil dibuat, saya menjalani command runserver dan pergi ke localhost:8000
@@ -48,9 +49,13 @@ Untuk menjadi permulaan pembelajaran pengembangan perangkat lunak, suatu framewo
 **Mengapa model pada Django disebut sebagai ORM?**
 
 Model pada Django disebut sebagai ORM atau Object-Relational Mapping karena model di Django menghubungkan kode Python dengan tabel dan data dalam database relasional. Ketika membuat model di Django, pengembang hanya perlu menulis kode Python tanpa perlu menulis kueri SQL secara manual. Hal ini hasil dari ORM yang menerjemahkan objek Python menjadi kueri SQL yang sesuai. Dalam Django, setiap pengembang melakukan perubahan pada model, pengembang dapat melakukan migrasi untuk memperbarui database. Ini dapat dilakukan karena ORM di Django menghasilkan perintah migrasi yang mengubah tabel produk di database tanpa perlu pengembang menulis perintah SQL secara manual.
+</details>
 
-## Tugas 3
+<details>
+<summary>Tugas 3</summary>
+   
 **Checklist Step by Step**
+
 1. Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
 Pertama, saya membuat file baru bernama forms.py di direktori aplikasi main. Pada file tersebut, saya mengimport form berupa ModelForm dari django.forms beserta model Product dari models.py di main. Lalu, saya menambah class ProductForm berisi model yang akan digunakan (Product) dan fields dari form, yaitu name, price, description, stock, dan category.
@@ -101,9 +106,14 @@ Kita membutuhkan csrf_token saat membuat form di Django karena csrf_token berfun
 
 - JSON by ID
 ![2024-09-18 (3)](https://github.com/user-attachments/assets/719e39e9-f3cf-403f-b63b-be4c079dd892)
+</details>
 
-## Tugas 4
+
+<details>
+<summary>Tugas 4</summary>
+
 **Checklist Step by Step**
+
 1. Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
 
 Registrasi:
@@ -163,8 +173,11 @@ Django mengingat pengguna yang telah login menggunakan cookies dan session frame
 Cookies memiliki banyak kegunaan selain menyimpan data last login pengguna, seperti menyimpan preferensi pengguna (misal tema browser dan bahasa), tracking dan analytics (untuk melacak aktivitas pengguna, lalu dianalisa untuk meningkatkan pengalaman pengguna), iklan dan personalisasi konten (melalui aktivitas penelusuran pengguna, hal-hal yang disukai pengguna dapat dianalisa sehingga iklan serta konten yang muncul akan sesuai kesukaan pengguna).
 
 Tidak semua cookies aman digunakan. Ada cookies yang jika tidak dikonfigurasi sebagai cookie “secure” atau “http-only”, bisa rentan terhadap serangan Man-in-the-middle atau Cross-Site Scripting. Cookies juga dapat berasal dari pihak ketiga, sehingga data pengguna dalam cookies itu memiliki bahaya diekploitasi oleh perusahaan iklan/pihak ketiga. Jika cookies menyimpan data pribadi yang sensitif (misal: data kartu kredit), informasi tersebut rentan dicuri penyerang jika tidak ada proteksi atau enkripsi yang tepat.
+</details>
 
-## Tugas 5
+<details>
+<summary>Tugas 5</summary>
+
 **Checklist Step by Step**
 
 * Implementasikan fungsi untuk menghapus dan mengedit product.
@@ -272,19 +285,23 @@ Padding merupakan ruang/space transparan yang mengelilingi content di dalam bord
 Flex box merupakan sistem tata letak/layout 1D yang mengatur elemen pada satu baris/kolom. Flex box, sesuai namanya, dapat mengatur elemen secara fleksibel, yaitu otomatis menyesuaikan ukurannya sesuai rusng yang tersedia. Dengan flex box, mudah bagi pengembang untuk membuat layout yang responsif, misal sejajar secara horizontal atau vertikal.
 
 Grid layout merupakan sistem tata letak/layout 2D yang mengatur elemen pada suatu tabel (lebih dari satu baris dan kolom). Grid layout memungkinkan pengembang memiliki lebih banyak kontrol dalam pengaturan posisi elemen. Hal ini berkat posisi elemen yang diatur secara eksplisit, sehingga dapat lebih presisi sesuai keinginan pengembang.
+</details>
 
-## Tugas 6
+
+<details>
+<summary>Tugas 6</summary>
+
 **Checklist Step by Step**
 
-- Ubahlah kode cards data mood agar dapat mendukung AJAX GET.
+- Ubahlah kode cards data produk agar dapat mendukung AJAX GET.
 
 Mengubah kode pada main.html menjadi cards yang menggunakan modal dan mendukung JavaScript.
 
-- Lakukan pengambilan data mood menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
+- Lakukan pengambilan data produk menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
 
 Membuat script JavaScript pada main.html yang berisi function addProduct() di mana ada command fetch() untuk melakukan GET request.
 
-- Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.
+- Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan produk.
 
 Menambahkan kode html (seperti di bawah) di fungsi refreshProducts() pada script di main.html, karena posisi tombol akan berubah jika ada products atau tidak ada products. Sehingga, saya memasukkan kondisional untuk masing-masing kondisi dalam fungsi tersebut agar posisi tombol berubah. 
 ``` html
@@ -305,7 +322,7 @@ Menambah routing ke fungsi `add_product_ajax(request)` pada urls.py.
 
 Pada fungsi `addProduct()`, url ke views `add_product_ajax` ditambahkan ke parameter `fetch()`.
 
-- Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
+- Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar produk terbaru tanpa reload halaman utama secara keseluruhan.
 
 Membuat fungsi `refreshProducts()` untuk merefresh halaman, lalu fungsi ini dimasukkan ke fungsi `addProduct()` sehingga setiap kali tombol submit ditekan/produk baru ditambahkan, halaman akan di-refresh secara asinkronus.
 
@@ -330,3 +347,4 @@ Kita perlu menggunakan decorator csrf_exempt karena bisa terdapat skenario permi
 **Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?**
 
 Pembersihan data input pengguna perlu dilakukan di backend juga karena frontend saja belum cukup untuk menjamin keamanan web. Frontend lebih mudah dimanipulasi oleh pengguna, misal dengan memodifikasi kode JavaScript di browser dan menonaktifkan validasi. Dengan menambah validasi dan pembersihan data di backend juga, kita memastikan input tidak bisa dilewati atau dimodifikasi oleh pengguna. Secara singkat, frontend berperan sebagai lapisan perlindungan pertama, dan backend berperan sebagai lapisan pertahanan utama.
+</details>
