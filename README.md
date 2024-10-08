@@ -278,31 +278,36 @@ Grid layout merupakan sistem tata letak/layout 2D yang mengatur elemen pada suat
 
 - Ubahlah kode cards data mood agar dapat mendukung AJAX GET.
 
-
+Mengubah kode pada main.html menjadi cards yang menggunakan modal dan mendukung JavaScript.
 
 - Lakukan pengambilan data mood menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
 
+Membuat script JavaScript pada main.html yang berisi function addProduct() di mana ada command fetch() untuk melakukan GET request.
 
-  
 - Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.
 
-
+Menambahkan kode html (seperti di bawah) di fungsi refreshProducts() pada script di main.html, karena posisi tombol akan berubah jika ada products atau tidak ada products. Sehingga, saya memasukkan kondisional untuk masing-masing kondisi dalam fungsi tersebut agar posisi tombol berubah. 
+``` html
+<button data-modal-target="crudModal" data-modal-toggle="crudModal" class="btn bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105" onclick="showModal();">
+Add New Product by AJAX
+</button>
+```
   
-- Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.
+- Buatlah fungsi view baru untuk menambahkan produk baru ke dalam basis data.
 
-
+Membuat fungsi baru bernama `add_product_ajax(request)` yang berisi kode untuk melakukan striptags pada input sebagai proteksi terhadap XSS attacks, validasi input tidak boleh kosong, dan menambahkan produk baru ke basis data.
   
 - Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
 
-
+Menambah routing ke fungsi `add_product_ajax(request)` pada urls.py.
   
 - Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
 
-
+Pada fungsi `addProduct()`, url ke views `add_product_ajax` ditambahkan ke parameter `fetch()`.
 
 - Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
 
-
+Membuat fungsi `refreshProducts()` untuk merefresh halaman, lalu fungsi ini dimasukkan ke fungsi `addProduct()` sehingga setiap kali tombol submit ditekan/produk baru ditambahkan, halaman akan di-refresh secara asinkronus.
 
 **Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!**
 
